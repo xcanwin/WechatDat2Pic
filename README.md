@@ -1,10 +1,10 @@
 # WechatDat2Pic
-####Purpose
+## Purpose
 ```
 Decoding the WeChat temporary file.
 ```
 
-####usage:
+## usage:
 ```
 usage:
   1) python WechatDat2Pic.py [DATFILE]
