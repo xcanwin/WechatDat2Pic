@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -- coding: utf-8 --
 
-# By default, wechat dat files are in "xxx:\\Documents\\WeChat Files\\xxx\\Data\\", and temporary dat files are in "xxx:\\Documents\\WeChat Files\\xxx\\Data\\Tiny\\"
+# Wechat dat files are in "WeChat Files/[WechatId]/Data/" or "WeChat Files/[WechatId]/FileStorage/Sns/"
 
 import os, sys, binascii
 
@@ -18,9 +18,9 @@ def decodeDat(fn):
             k = h1
             break
     if k == '':
-        print '[-] error:', fn
+        print('[-] error:', fn)
     else:
-        for i in xrange(0,len(hexfile),2):
+        for i in range(0,len(hexfile),2):
             h = int(hexfile[i:i+2], 16)
             hnew = ( k ^ int(hexfile[0:2], 16) ) ^ h
             hnew = hex(hnew)[2:]
@@ -30,11 +30,11 @@ def decodeDat(fn):
         binfile = binascii.a2b_hex(''.join(obj))
         fnnew = fn + '.' + filetype
         open(fnnew, 'wb').write(binfile)
-        print '[+] save as:', fnnew
+        print('[+] save as:', fnnew)
 
 if len(sys.argv)<2:
-    print 'usage: python', sys.argv[0], '[DATFILE]'
-    print 'usage: python', sys.argv[0], '[DATPATH]'
+    print('usage: python', sys.argv[0], '[DATFILE]')
+    print('usage: python', sys.argv[0], '[DATPATH]')
 else:
     fn = sys.argv[1]
     if os.path.exists(fn):

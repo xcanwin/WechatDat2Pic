@@ -4,9 +4,8 @@
 Decoding the WeChat temporary file.
 ```
 
-## usage:
+## Usage
 ```
-usage:
   1) python WechatDat2Pic.py [DATFILE]
      or
      python WechatDat2Pic.py [DATPATH]
